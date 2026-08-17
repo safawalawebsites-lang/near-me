@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import "@fontsource/manrope/300.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/600.css";
+import "@fontsource/manrope/700.css";
+import "@fontsource/manrope/800.css";
 import "./globals.css";
-
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
-const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://safawalarishikesh.com"),
@@ -17,5 +19,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-IN"><body className={`${manrope.variable} ${cormorant.variable}`}>{children}</body></html>;
+  return <html lang="en-IN"><body>{children}</body></html>;
 }

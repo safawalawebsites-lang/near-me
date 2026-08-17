@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Wedding Safa Wala in ${location.name}`,
     description: `Professional groom pagdi and baraati safa tying in ${location.name}. On-location wedding service from Safawala Rishikesh. Check availability.`,
-    alternates: { canonical: `https://safawalarishikesh.com/areas/${location.slug}` },
+    alternates: { canonical: `https://safawalarishikesh.com/${location.slug}` },
   };
 }
 
