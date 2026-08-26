@@ -2,7 +2,6 @@ import vinext from "vinext";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
-import { cdnAdapter } from "@vinext/cloudflare/cache/cdn-adapter";
 import { cloudflare } from "@cloudflare/vite-plugin";
 import path from "node:path";
 
@@ -16,6 +15,7 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
 const localBindingConfig = {
   main: "./worker/index.ts",
+  compatibility_flags: ["nodejs_compat"],
   d1_databases: d1
     ? [
         {
@@ -50,9 +50,7 @@ export default defineConfig(async () => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
-      vinext({
-        cache: { cdn: cdnAdapter() },
-      }),
+      vinext(),
       sites(),
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
