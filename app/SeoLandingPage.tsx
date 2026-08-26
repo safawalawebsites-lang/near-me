@@ -1,6 +1,7 @@
 import InquiryForm from "./InquiryForm";
 import ExplorePanels from "./ExplorePanels";
 import { getHeroTitle, getLocationSeoContent, getServiceSeoContent } from "./seo-content";
+import { keywordPages } from "./keyword-data";
 import { gallery, getServiceFaqs, locations, services, type LocationItem } from "./site-data";
 import SiteFooter from "./SiteFooter";
 
@@ -18,6 +19,21 @@ export default function SeoLandingPage(props: Props) {
   const isLocation = props.kind === "location";
   const location = isLocation ? props.location : null;
   const service = !isLocation ? props.service : null;
+  const relatedKeywords = location
+    ? (() => {
+        const seed = location.slug;
+        const picks = new Set<number>();
+        let i = 0;
+        while (picks.size < Math.min(8, keywordPages.length) && i < 200) {
+          let h = 0;
+          const s = `${seed}|${i}`;
+          for (let c = 0; c < s.length; c++) h = (h * 31 + s.charCodeAt(c)) >>> 0;
+          picks.add(h % keywordPages.length);
+          i++;
+        }
+        return Array.from(picks).map((idx) => keywordPages[idx]);
+      })()
+    : [];
   const pageName = location?.name ?? service!.name;
   const focusKeyword = location ? `wedding safa wala in ${location.name}` : `${service!.name.toLowerCase()} in Safawala Near Me`;
   const title = getHeroTitle(location?.slug ?? service!.slug, location ? "location" : "service");
@@ -44,7 +60,6 @@ export default function SeoLandingPage(props: Props) {
       <header className="site-header">
         <Brand />
         <nav aria-label="Page navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#areas">Areas</a><a href="#faq">FAQs</a></nav>
-        <a className="header-cta" href={`https://wa.me/919725295691?text=${encodeURIComponent(`Hello Safawala Near Me, please check ${pageName} availability.`)}`}>Check availability</a>
       </header>
 
       <main className="landing-main">
@@ -96,6 +111,15 @@ export default function SeoLandingPage(props: Props) {
         </section>
       </main>
 
+      {relatedKeywords.length > 0 && (
+        <section className="landing-planning section-shell" aria-label="Related searches">
+          <div>
+            <p className="eyebrow">Related searches</p>
+            <h2>More ways people search for this.</h2>
+          </div>
+          <div className="explore-chip-links">{relatedKeywords.map((k) => <a href={`/keywords/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
+        </section>
+      )}
       <SiteFooter />
     </>
   );

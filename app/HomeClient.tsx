@@ -2,6 +2,7 @@
 
 import { FormEvent, ReactNode, useState } from "react";
 import { gallery, internalLocations, nearbyLocations, primaryKeywords, services } from "./site-data";
+import { keywordPages } from "./keyword-data";
 import SiteFooter from "./SiteFooter";
 
 const serviceIcons: Record<string, ReactNode> = {
@@ -74,7 +75,6 @@ export default function HomeClient() {
         <nav aria-label="Main navigation">
           <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#footer-areas">Areas</a><a href="#faq">FAQs</a>
         </nav>
-        <a className="header-cta" href="https://wa.me/919725295691?text=Hello%20Safawala%20Near%20Me%2C%20I%20want%20to%20check%20availability.">Check availability</a>
       </header>
 
       <main id="top">
@@ -86,7 +86,7 @@ export default function HomeClient() {
             <div className="hero-actions"><a className="button primary" href="#quote">Get a free quote</a><a className="text-link" href="#gallery">View real celebrations <span>↗</span></a></div>
             <div className="hero-photo">
               <img src="/gallery/mountain-wedding.webp" alt="Groom in an ivory wedding safa celebrating under rose petals" />
-              <div className="photo-note"><span>Serving cities across India</span><strong>{allLocations.length} locations</strong></div>
+              <div className="photo-note"><span>Serving Safawala Near Me & nearby destinations</span><strong>31 unique locations</strong></div>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export default function HomeClient() {
         </section>
 
         <section className="trust-strip" aria-label="Safawala credentials">
-          <div><strong>40+</strong><span>years of heritage</span></div><div><strong>4.5 lakh+</strong><span>clients served</span></div><div><strong>{allLocations.length}</strong><span>locations represented</span></div><div><strong>15+</strong><span>countries reached</span></div>
+          <div><strong>40+</strong><span>years of heritage</span></div><div><strong>4.5 lakh+</strong><span>clients served</span></div><div><strong>30+</strong><span>cities represented</span></div><div><strong>15+</strong><span>countries reached</span></div>
         </section>
 
         <section className="content-section section-shell" id="services">
@@ -184,6 +184,10 @@ export default function HomeClient() {
           <article className={`explore-card explore-card-compact ${expandedSearches ? "is-expanded" : ""}`}>
             <div className="explore-card-head"><div><h2>Popular wedding safa searches</h2><p>Focused pages for groom pagdi, baraati safa and wedding turban services.</p></div><button type="button" onClick={() => setExpandedSearches((value) => !value)} aria-expanded={expandedSearches}>{expandedSearches ? "Hide pages" : "View all"}</button></div>
             {expandedSearches && <div className="explore-chip-links">{services.map((service) => <a href={`/services/${service.slug}`} key={service.slug}>{service.name}</a>)}</div>}
+          </article>
+          <article className="explore-card explore-card-compact">
+            <div className="explore-card-head"><div><h2>Popular searches</h2><p>{Math.min(30, keywordPages.length)} of {keywordPages.length} specific searches we have pages for.</p></div></div>
+            <div className="explore-chip-links">{keywordPages.slice(0, 30).map((k) => <a href={`/keywords/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
           </article>
         </section>
 

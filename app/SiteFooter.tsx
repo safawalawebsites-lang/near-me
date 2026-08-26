@@ -11,7 +11,8 @@ export default function SiteFooter() {
           </a>
           <h2>Tradition, tied beautifully.</h2>
           <p>Refined groom pagdis and coordinated wedding safas, styled at your venue across Safawala Near Me and nearby destinations.</p>
-          <a className="footer-whatsapp" href="https://wa.me/919725295691?text=Hello%20Safawala%20Near%20Me%2C%20I%20want%20to%20check%20availability.">Plan on WhatsApp <span>↗</span></a>
+
+          <nav className="footer-legal" aria-label="Legal"><a href="/about">About</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></nav>
         </div>
 
         <div className="footer-nav-group">
@@ -29,6 +30,7 @@ export default function SiteFooter() {
         <div className="footer-contact">
           <h3>Contact</h3>
           <a className="footer-phone" href="tel:+919725295691">+91 97252 95691</a>
+          <a className="footer-phone" href="tel:+919725295692">+91 97252 95692</a>
           <a href="https://wa.me/919725295691">WhatsApp the team</a>
           <p>Connecting you to your nearest Safawala team</p>
           <p>Monday–Saturday<br />10:00–19:00</p>
