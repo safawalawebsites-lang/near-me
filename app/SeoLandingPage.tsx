@@ -79,7 +79,7 @@ export default function SeoLandingPage(props: Props) {
         <section className="landing-trust" aria-label="Safawala service strengths"><div><strong>On-site</strong><span>hotel, resort or home</span></div><div><strong>Groom first</strong><span>unhurried signature styling</span></div><div><strong>Team planned</strong><span>for your guest quantity</span></div><div><strong>Colour aligned</strong><span>with outfits and décor</span></div></section>
 
         <section className="landing-about section-shell" id="about">
-          <div className="landing-about-image"><img src={rotatedGallery[0][0]} alt={`${focusKeyword} – ${rotatedGallery[0][1]}`} /></div>
+          <div className="landing-about-image"><img src={rotatedGallery[0][0]} alt={`${focusKeyword} – ${rotatedGallery[0][1]}`} width="1350" height="1688" /></div>
           <div className="landing-about-copy"><p className="eyebrow">About the service</p><h2>{aboutTitle}</h2><p>{aboutCopy}</p><p>{secondCopy}</p><ul><li>Groom pagdi consultation</li><li>Family and baraati batches</li><li>Venue-based artist team</li><li>Style and colour coordination</li></ul></div>
         </section>
 
@@ -90,7 +90,7 @@ export default function SeoLandingPage(props: Props) {
 
         <section className="landing-gallery" id="gallery">
           <div className="section-shell"><div className="section-heading compact"><div><p className="eyebrow">Safawala gallery</p><h2>Wedding safas made for the moment—and the photographs.</h2></div><p>A curated view of groom pagdi details, fabrics, colours and coordinated wedding styling.</p></div></div>
-          <div className="landing-gallery-grid">{rotatedGallery.slice(0, 6).map(([src, alt]) => <figure key={src}><img src={src} alt={`${alt} for ${pageName}`} loading="lazy" /></figure>)}</div>
+          <div className="landing-gallery-grid">{rotatedGallery.slice(0, 6).map(([src, alt]) => <figure key={src}><img src={src} alt={`${alt} for ${pageName}`} loading="lazy" width="1350" height="1688" /></figure>)}</div>
         </section>
 
         <section className="landing-planning section-shell">

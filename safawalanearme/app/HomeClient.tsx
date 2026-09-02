@@ -85,7 +85,7 @@ export default function HomeClient() {
             <p className="hero-lede">One trusted safa brand, serving grooms and families across every major city — find your city's dedicated Safawala team below.</p>
             <div className="hero-actions"><a className="button primary" href="#quote">Get a free quote</a><a className="text-link" href="#gallery">View real celebrations <span>↗</span></a></div>
             <div className="hero-photo">
-              <img src="/gallery/mountain-wedding.webp" alt="Groom in an ivory wedding safa celebrating under rose petals" />
+              <img src="/gallery/mountain-wedding.webp" alt="Groom in an ivory wedding safa celebrating under rose petals" width="1200" height="1500" />
               <div className="photo-note"><span>Serving Safawala Near Me & nearby destinations</span><strong>31 unique locations</strong></div>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function HomeClient() {
         </section>
 
         <section className="editorial section-shell">
-          <div className="editorial-image"><img src="/gallery/rishikesh-editorial.webp" alt="Groom wearing a refined ivory wedding safa and embroidered sherwani" /></div>
+          <div className="editorial-image"><img src="/gallery/rishikesh-editorial.webp" alt="Groom wearing a refined ivory wedding safa and embroidered sherwani" width="1080" height="1350" /></div>
           <div className="editorial-copy"><p className="eyebrow">Local-team planning</p><h2>Calm preparation before the celebration begins.</h2><p>Every wedding is local in the end, so a safa service only works well when the artists actually know the venues, travel times and preparation routines of that city.</p><p>We route your enquiry to the closest dedicated Safawala team, who confirm the venue pin, reporting time and preparation room directly with you before the event.</p><ul><li>On-location hotel, resort and home service</li><li>Groom, family and baraati styling plans</li><li>Colour coordination from outfit references</li><li>Travel planning for nearby destinations</li></ul></div>
         </section>
 
@@ -156,7 +156,7 @@ export default function HomeClient() {
 
         <section className="gallery-section" id="gallery">
           <div className="section-shell"><div className="section-heading compact"><div><p className="eyebrow">Selected work</p><h2>Real details. Quiet confidence.</h2></div><p>Photographs from the supplied Safawala collection, selected for their focus on groom styling and wedding craft.</p></div></div>
-          <div className="gallery-grid">{gallery.map(([src, alt], index) => <figure className={`gallery-item gallery-${index + 1}`} key={src}><img src={src} alt={alt} loading={index > 1 ? "lazy" : "eager"} /><figcaption>{index === 0 ? "A celebration framed by the hills" : index === 1 ? "Ivory folds with floral detail" : index === 2 ? "A timeless groom palette" : index === 3 ? "Made to move with the moment" : index === 4 ? "Emerald accents, balanced softly" : "Details that hold the whole look"}</figcaption></figure>)}</div>
+          <div className="gallery-grid">{gallery.map(([src, alt], index) => <figure className={`gallery-item gallery-${index + 1}`} key={src}><img src={src} alt={alt} loading={index > 1 ? "lazy" : "eager"} width="1350" height="1688" /><figcaption>{index === 0 ? "A celebration framed by the hills" : index === 1 ? "Ivory folds with floral detail" : index === 2 ? "A timeless groom palette" : index === 3 ? "Made to move with the moment" : index === 4 ? "Emerald accents, balanced softly" : "Details that hold the whole look"}</figcaption></figure>)}</div>
         </section>
 
         <section className="content-section section-shell process">
