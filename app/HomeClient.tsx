@@ -168,7 +168,7 @@ export default function HomeClient() {
           <div className="section-shell">
             <div className="section-heading"><div><p className="eyebrow">A useful booking guide</p><h2>A clearer way to plan your wedding safa service.</h2></div><p>Your quote is shaped by the fabric, quantity, location and time available for styling.</p></div>
             <div className="guide-grid">
-              <article><span>01</span><h3>Price and packages</h3><p>Wedding safa price depends on fabric, guest quantity, tying style, groom accessories, artist count and venue distance. Share your date, venue pin and headcount for a useful package estimate.</p></article>
+              <article><span>01</span><h3>Price and packages</h3><p>Wedding safa price typically runs ₹5,000–₹15,000 per person, depending on fabric, guest quantity, tying style, groom accessories, artist count and venue distance. Share your date, venue pin and headcount for a useful package estimate.</p></article>
               <article><span>02</span><h3>Destination logistics</h3><p>For hotels, resorts and venues nationwide, we plan the arrival buffer, preparation room and tying sequence so the groom and baraatis are ready on time.</p></article>
               <article><span>03</span><h3>Functions and groups</h3><p>Book a groom safa, family pagdi service or full baraati safa team for the wedding, engagement, reception, sangeet, haldi or mehndi.</p></article>
               <article><span>04</span><h3>Comfort and finishing</h3><p>Each wedding pagdi is balanced for shape and comfort, with kalgi, brooch, feather or pearl details used selectively for a polished finish.</p></article>

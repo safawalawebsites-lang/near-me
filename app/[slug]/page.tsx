@@ -25,5 +25,10 @@ export default async function LocationPage({ params }: Props) {
   const location = locations.find((item) => item.slug === slug);
   if (!location) notFound();
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: location.faq.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) };
-  return <><SeoLandingPage kind="location" location={location} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /></>;
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://safawalanearme.com/" },
+    { "@type": "ListItem", position: 2, name: "Service areas", item: "https://safawalanearme.com/#areas" },
+    { "@type": "ListItem", position: 3, name: location.name, item: `https://safawalanearme.com/${location.slug}` },
+  ] };
+  return <><SeoLandingPage kind="location" location={location} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} /></>;
 }

@@ -19,7 +19,7 @@ export default function InquiryForm({ pageName, areaPlaceholder = "Venue or area
       `Venue / area: ${data.get("area")}`,
       `Requirement: ${data.get("requirement")}`,
     ].join("\n");
-    window.open(`https://wa.me/919725295692?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/919725295691?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
 
   return (

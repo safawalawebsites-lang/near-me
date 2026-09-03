@@ -29,11 +29,29 @@ export const metadata: Metadata = {
     "msapplication-config": "/browserconfig.xml?v=3",
   },
   openGraph: {
-    images: [{ url: "/og.png", width: 1745, height: 909, alt: "Safawala Near Me — find your city's dedicated wedding safa team." }],
+    url: "https://safawalanearme.com/",
+    siteName: "Safawala Near Me",
+    type: "website",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "Safawala Near Me — find your city's dedicated wedding safa team." }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Safawala Near Me",
+  "url": "https://safawalanearme.com/",
+  "logo": "https://safawalanearme.com/safawala-logo-current.png",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Safawala Near Me",
+  "url": "https://safawalanearme.com/",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-IN" suppressHydrationWarning><body suppressHydrationWarning>{children}</body></html>;
+  return <html lang="en-IN" suppressHydrationWarning><body suppressHydrationWarning>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} /></body></html>;
 }
