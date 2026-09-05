@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
   const kw: MetadataRoute.Sitemap = keywordPages.map((k) => ({
-    url: `${BASE}/keywords/${k.slug}`,
+    url: `${BASE}/${k.slug}`,
     changeFrequency: "yearly",
     priority: 0.4,
   }));

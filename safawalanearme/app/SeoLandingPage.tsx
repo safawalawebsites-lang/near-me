@@ -117,7 +117,7 @@ export default function SeoLandingPage(props: Props) {
             <p className="eyebrow">Related searches</p>
             <h2>More ways people search for this.</h2>
           </div>
-          <div className="explore-chip-links">{relatedKeywords.map((k) => <a href={`/keywords/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
+          <div className="explore-chip-links">{relatedKeywords.map((k) => <a href={`/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
         </section>
       )}
       <SiteFooter />

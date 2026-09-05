@@ -187,7 +187,7 @@ export default function HomeClient() {
           </article>
           <article className="explore-card explore-card-compact">
             <div className="explore-card-head"><div><h2>Popular searches</h2><p>{Math.min(30, keywordPages.length)} of {keywordPages.length} specific searches we have pages for.</p></div></div>
-            <div className="explore-chip-links">{keywordPages.slice(0, 30).map((k) => <a href={`/keywords/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
+            <div className="explore-chip-links">{keywordPages.slice(0, 30).map((k) => <a href={`/${k.slug}`} key={k.slug}>{k.title}</a>)}</div>
           </article>
         </section>
 
